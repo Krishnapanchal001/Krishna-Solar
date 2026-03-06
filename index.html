@@ -3,65 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krishna Solar</title>
+
+<title>Krishna Solar Meerut</title>
 
 <style>
 
 body{
-margin:0;
 font-family:Arial;
+margin:0;
+background:#f5f5f5;
 }
 
 header{
-background:#0b7a3e;
+background:#0a7d32;
 color:white;
+padding:15px;
 text-align:center;
-padding:20px;
+}
+
+nav{
+background:#222;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-size:18px;
 }
 
 .hero{
-background:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d');
+background:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
 background-size:cover;
-color:white;
+padding:120px 20px;
 text-align:center;
-padding:100px 20px;
-}
-
-.hero h1{
-font-size:35px;
+color:white;
 }
 
 .btn{
 background:yellow;
-padding:10px 20px;
+padding:12px 25px;
+border-radius:8px;
 text-decoration:none;
 color:black;
 font-weight:bold;
-border-radius:5px;
 }
 
-section{
-padding:40px;
+.section{
+padding:40px 20px;
 text-align:center;
-}
-
-.services{
-display:grid;
-grid-template-columns:1fr;
-gap:20px;
 }
 
 .card{
-background:#f2f2f2;
+background:white;
 padding:20px;
+border-radius:10px;
+margin-top:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.gallery img{
+width:100%;
+margin-top:10px;
 border-radius:10px;
 }
 
-footer{
-background:#111;
+.calculator input{
+padding:10px;
+width:200px;
+}
+
+.calculator button{
+padding:10px 20px;
+background:#0a7d32;
 color:white;
-text-align:center;
-padding:20px;
+border:none;
+margin-left:10px;
 }
 
 .whatsapp{
@@ -72,67 +91,135 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
-font-size:20px;
+font-size:22px;
 text-decoration:none;
 }
 
+footer{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+}
+
 </style>
+
+<script>
+
+function calculateSolar(){
+
+var bill=document.getElementById("bill").value;
+
+var system=bill/100;
+
+document.getElementById("result").innerHTML=
+"आपको लगभग "+system.toFixed(1)+" kW Solar System चाहिए";
+
+}
+
+</script>
+
 </head>
 
 <body>
 
 <header>
-<h2>Krishna Solar</h2>
-<p>सोलर सिस्टम इंस्टॉलेशन और सर्विस</p>
+
+<h2>🌞 Krishna Solar</h2>
+<p>Meerut Solar Installation Services</p>
+
 </header>
 
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Projects</a>
+<a href="#">Contact</a>
+
+</nav>
+
 <div class="hero">
+
 <h1>अपने घर को सोलर से चलाइए</h1>
-<p>बिजली बिल कम करें और स्वच्छ ऊर्जा अपनाएं</p>
-<br>
+
+<p>बिजली बिल कम करें</p>
+
 <a class="btn" href="tel:+917088785630">Call Now</a>
+
 </div>
 
-<section>
+<div class="section">
+
 <h2>हमारी सेवाएं</h2>
 
-<div class="services">
-
 <div class="card">
-<h3>Solar Panel Installation</h3>
-<p>घर और दुकान के लिए सोलर सिस्टम इंस्टॉलेशन।</p>
-</div>
 
-<div class="card">
-<h3>Maintenance</h3>
-<p>सोलर सिस्टम की रिपेयर और सर्विस।</p>
+Solar Panel Installation
+
 </div>
 
 <div class="card">
-<h3>Free Consultation</h3>
-<p>सोलर लगाने से पहले फ्री सलाह।</p>
+
+Solar Maintenance
+
+</div>
+
+<div class="card">
+
+Solar Consultation
+
 </div>
 
 </div>
 
-</section>
+<div class="section">
 
-<section>
-<h2>हमसे संपर्क करें</h2>
+<h2>Solar Calculator</h2>
 
-<p>📞 Phone: +91 7088785630</p>
-<p>📧 Email: Goluchakbandiwala@gmail.com</p>
-<p>📍 Location: Meerut, Uttar Pradesh</p>
+<div class="calculator">
 
-</section>
+<input id="bill" placeholder="Monthly Bill ₹">
+
+<button onclick="calculateSolar()">Calculate</button>
+
+<p id="result"></p>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>हमारे प्रोजेक्ट</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634">
+
+<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Contact</h2>
+
+<p>📞 7088785630</p>
+
+<p>📍 Meerut Uttar Pradesh</p>
+
+</div>
 
 <footer>
 
-<p>© 2026 Krishna Solar</p>
+© 2026 Krishna Solar
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/917088785630">W</a>
+<a class="whatsapp" href="https://wa.me/917088785630">💬</a>
 
 </body>
 </html>
