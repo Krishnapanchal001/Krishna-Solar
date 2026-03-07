@@ -3,252 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna Solar - Modern Solar Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Krishna Solar - Advanced Solar Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-        }
-
-        /* --- NAVIGATION (Cleaner & sticky) --- */
-        nav {
-            background: rgba(26, 26, 26, 0.95); /* Semi-transparent dark */
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: #ffcc00; /* Sunny Yellow */
-            letter-spacing: 1px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+        /* Navigation */
+        nav { background: #1a1a1a; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .logo { font-weight: 700; font-size: 1.5rem; color: #ffcc00; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: #ffcc00; }
 
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 400;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-
-        /* --- HERO SECTION (Full Screen Premium) --- */
+        /* Hero Section */
         .hero {
-            height: 90vh; /* Almost full screen */
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
-                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2000&auto=format&fit=crop'); /* Yahan apni high-res image ka link dalein */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1509391366360-feaf9fa44853?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 20px;
         }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .btn-call { background: #ffcc00; color: #000; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; display: inline-block; }
 
-        .hero h1 {
-            font-size: 3.5rem; /* Massive heading */
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        /* Price Calculator Section */
+        .calculator { padding: 60px 10%; background: #f9f9f9; text-align: center; }
+        .calc-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        .result { font-weight: bold; color: #2ecc71; font-size: 1.2rem; margin-top: 15px; }
 
-        .hero p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            max-width: 700px;
-            opacity: 0.9;
-        }
+        /* Services Section */
+        .services { padding: 70px 10%; text-align: center; }
+        .service-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
+        .service-card { background: #fff; padding: 30px; border-radius: 15px; width: 45%; min-width: 280px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 5px solid #ffcc00; }
 
-        .btn-call {
-            background: #ffcc00; /* Sunny Yellow */
-            color: #1a1a1a;
-            padding: 18px 45px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            transition: all 0.3s ease;
-        }
+        /* Contact Form */
+        .contact { padding: 60px 10%; background: #1a1a1a; color: white; text-align: center; }
+        .contact form { max-width: 600px; margin: 0 auto; text-align: left; }
+        .contact button { background: #ffcc00; border: none; padding: 15px 30px; font-weight: bold; border-radius: 8px; cursor: pointer; width: 100%; }
 
-        .btn-call:hover {
-            transform: translateY(-3px) scale(1.03);
-            background: #e6b800;
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
-        }
+        /* Footer */
+        footer { background: #111; color: #777; padding: 20px; text-align: center; font-size: 0.8rem; }
 
-        /* --- SERVICES SECTION (Modern Grid) --- */
-        .services {
-            padding: 80px 5%;
-            text-align: center;
-        }
+        /* WhatsApp */
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+        .whatsapp:hover { transform: scale(1.1); }
 
-        .services h2 {
-            margin-bottom: 50px;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .service-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.02);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border-color: #ffcc00;
-        }
-
-        .service-icon {
-            font-size: 45px;
-            color: #ffcc00;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* --- WHATSAPP FLOATING BUTTON (Add Jaan!) --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366; /* WhatsApp Green */
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .whatsapp-float img {
-            width: 38px;
-            height: 38px;
-        }
-
-        /* --- RESPONSIVE MIXINS (For Phones) --- */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            nav ul {
-                display: none; /* Mobile par menu hide, simple logo rakhein */
-            }
-            .services h2 {
-                font-size: 2.2rem;
-            }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .service-card { width: 100%; } }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">Krishna Solar</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <header id="home" class="hero">
         <h1>Apne Ghar Ko Solar Se Chalayen</h1>
-        <p>Sasti bijli aur pollution-free bharat ke liye aaj hi premium solar solutions lagwayen.</p>
-        <a href="tel:+917088785630" class="btn-call">Call Now</a>
+        <p style="margin-bottom:25px;">Sasti Bijli, Behtar Bhavishya - Krishna Solar ke saath.</p>
+        <a href="tel:+917088785630" class="btn-call">Abhi Call Karein</a>
     </header>
 
+    <section id="calculator" class="calculator">
+        <h2 style="margin-bottom: 30px;">Solar Requirement Calculator</h2>
+        <div class="calc-box">
+            <p>Apna mahine ka bijli bill daalein (₹):</p>
+            <input type="number" id="bill" placeholder="Example: 2000" oninput="calculateSolar()">
+            <div class="result" id="calcResult">System Size: -- KW</div>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">*Yeh ek anumanit (estimate) size hai.</p>
+        </div>
+    </section>
+
     <section id="services" class="services">
-        <h2>Hamari Services</h2>
+        <h2>Hamari Expert Services</h2>
         <div class="service-container">
             <div class="service-card">
-                <span class="service-icon">☀️</span>
                 <h3>Solar Installation</h3>
-                <p>Expert and complete rooftop solar installation for homes, offices, and factories.</p>
+                <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">🔧</span>
-                <h3>Solar Maintenance</h3>
-                <p>Repair, cleaning, and professional service of existing solar panels to ensure maximum efficiency.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🔋</span>
-                <h3>Smart Battery Backup</h3>
-                <p>High-quality, long-lasting battery solutions for 24/7 uninterrupted power supply.</p>
+                <h3>AMC & Maintenance</h3>
+                <p>Panels ki safai aur technical checkup ki suvidha.</p>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/917088785630" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+    <section id="contact" class="contact">
+        <h2 style="margin-bottom: 30px;">Muft Salah Ke Liye Form Bharein</h2>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST"> <input type="text" name="name" placeholder="Aapka Naam" required>
+            <input type="email" name="email" placeholder="Email (Optional)">
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <textarea name="message" placeholder="Aapka Sawal" style="width: 100%; height: 100px; border-radius: 8px; padding: 10px; margin: 10px 0;"></textarea>
+            <button type="submit">Submit Karein</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Krishna Solar | Powered by 70887 85630</p>
+    </footer>
+
+    <a href="https://wa.me/917088785630" class="whatsapp" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
     </a>
+
+    <script>
+        function calculateSolar() {
+            let bill = document.getElementById('bill').value;
+            let kw = (bill / 1000).toFixed(1); // Rough estimate: 1000 bill per 1KW
+            if(bill > 0) {
+                document.getElementById('calcResult').innerHTML = "Aapko " + kw + " KW Solar ki zaroorat hai";
+            } else {
+                document.getElementById('calcResult').innerHTML = "System Size: -- KW";
+            }
+        }
+    </script>
 
 </body>
 </html>
