@@ -1,225 +1,147 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Krishna Solar Meerut</title>
+<title>Krishna Solar</title>
 
 <style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#f5f5f5;
+font-family:Arial;
+background:#f4f6f8;
 }
+
+/* Header */
 
 header{
-background:#0a7d32;
+background:#0f7b3f;
 color:white;
-padding:15px;
+padding:20px;
 text-align:center;
 }
 
+header h1{
+margin:0;
+}
+
+/* Menu */
+
 nav{
-background:#222;
-padding:10px;
-text-align:center;
+background:#111;
+display:flex;
+justify-content:center;
 }
 
 nav a{
 color:white;
-margin:10px;
+padding:14px 20px;
 text-decoration:none;
-font-size:18px;
 }
 
+nav a:hover{
+background:#0f7b3f;
+}
+
+/* Hero Section */
+
 .hero{
+height:350px;
 background:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
 background-size:cover;
-padding:120px 20px;
-text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 color:white;
+text-align:center;
+}
+
+.hero h2{
+background:rgba(0,0,0,0.5);
+padding:10px 20px;
 }
 
 .btn{
-background:yellow;
+background:#ffc107;
 padding:12px 25px;
-border-radius:8px;
-text-decoration:none;
 color:black;
+text-decoration:none;
 font-weight:bold;
+border-radius:5px;
 }
 
-.section{
-padding:40px 20px;
+/* Services */
+
+.services{
+padding:40px;
 text-align:center;
 }
 
 .card{
 background:white;
+margin:15px auto;
 padding:20px;
+max-width:300px;
 border-radius:10px;
-margin-top:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.gallery img{
-width:100%;
-margin-top:10px;
-border-radius:10px;
-}
-
-.calculator input{
-padding:10px;
-width:200px;
-}
-
-.calculator button{
-padding:10px 20px;
-background:#0a7d32;
-color:white;
-border:none;
-margin-left:10px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 footer{
 background:#111;
 color:white;
-padding:20px;
 text-align:center;
+padding:20px;
 }
 
 </style>
-
-<script>
-
-function calculateSolar(){
-
-var bill=document.getElementById("bill").value;
-
-var system=bill/100;
-
-document.getElementById("result").innerHTML=
-"आपको लगभग "+system.toFixed(1)+" kW Solar System चाहिए";
-
-}
-
-</script>
-
 </head>
 
 <body>
 
 <header>
-
-<h2>🌞 Krishna Solar</h2>
+<h1>☀ Krishna Solar</h1>
 <p>Meerut Solar Installation Services</p>
-
 </header>
 
 <nav>
-
 <a href="#">Home</a>
 <a href="#">Services</a>
 <a href="#">Projects</a>
 <a href="#">Contact</a>
-
 </nav>
 
-<div class="hero">
+<section class="hero">
+<h2>Apne ghar ko Solar se chalaiye</h2>
+<a href="tel:+917088785630" class="btn">Call Now</a>
+</section>
 
-<h1>अपने घर को सोलर से चलाइए</h1>
-
-<p>बिजली बिल कम करें</p>
-
-<a class="btn" href="tel:+917088785630">Call Now</a>
-
-</div>
-
-<div class="section">
+<section class="services">
 
 <h2>हमारी सेवाएं</h2>
 
 <div class="card">
-
-Solar Panel Installation
-
+<h3>Solar Installation</h3>
+<p>Complete rooftop solar system installation.</p>
 </div>
 
 <div class="card">
-
-Solar Maintenance
-
+<h3>Solar Maintenance</h3>
+<p>Repair and service of solar systems.</p>
 </div>
 
 <div class="card">
-
-Solar Consultation
-
+<h3>Solar Consultation</h3>
+<p>Free solar energy consultation.</p>
 </div>
 
-</div>
-
-<div class="section">
-
-<h2>Solar Calculator</h2>
-
-<div class="calculator">
-
-<input id="bill" placeholder="Monthly Bill ₹">
-
-<button onclick="calculateSolar()">Calculate</button>
-
-<p id="result"></p>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>हमारे प्रोजेक्ट</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634">
-
-<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Contact</h2>
-
-<p>📞 7088785630</p>
-
-<p>📍 Meerut Uttar Pradesh</p>
-
-</div>
+</section>
 
 <footer>
 
-© 2026 Krishna Solar
+<p>Phone: +91 7088785630</p>
+<p>Meerut, Uttar Pradesh</p>
 
 </footer>
-
-<a class="whatsapp" href="https://wa.me/917088785630">💬</a>
 
 </body>
 </html>
