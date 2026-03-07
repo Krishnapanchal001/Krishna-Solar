@@ -1,196 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krishna Solar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Solar - Modern Solar Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<style>/* Banner Section ka Background */
-.hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-    url('https://source.unsplash.com/featured/?solar-panel,rooftop');
-    background-size: cover;
-    background-position: center;
-    height: 400px; /* Aap apne hisaab se height badal sakte hain */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
 
-/* Header */
+        /* --- NAVIGATION (Cleaner & sticky) --- */
+        nav {
+            background: rgba(26, 26, 26, 0.95); /* Semi-transparent dark */
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-header{
-background:#0a7f3f;
-color:white;
-padding:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-}
+        .logo {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffcc00; /* Sunny Yellow */
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-/* Menu */
+        nav ul li {
+            margin-left: 25px;
+        }
 
-nav{
-background:#111;
-text-align:center;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
 
-nav a{
-color:white;
-padding:14px;
-display:inline-block;
-text-decoration:none;
-transition:0.3s;
-}
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
 
-nav a:hover{
-background:#0a7f3f;
-}
+        /* --- HERO SECTION (Full Screen Premium) --- */
+        .hero {
+            height: 90vh; /* Almost full screen */
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2000&auto=format&fit=crop'); /* Yahan apni high-res image ka link dalein */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
 
-/* Hero */
+        .hero h1 {
+            font-size: 3.5rem; /* Massive heading */
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.hero{
-background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover;
-height:350px;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-color:white;
-text-align:center;
-animation:fadeIn 2s;
-}
+        .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 700px;
+            opacity: 0.9;
+        }
 
-.hero h1{
-background:rgba(0,0,0,0.5);
-padding:10px 20px;
-border-radius:5px;
-}
+        .btn-call {
+            background: #ffcc00; /* Sunny Yellow */
+            color: #1a1a1a;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            transition: all 0.3s ease;
+        }
 
-.btn{
-background:#ffcc00;
-padding:12px 25px;
-margin-top:15px;
-border-radius:5px;
-text-decoration:none;
-color:black;
-font-weight:bold;
-transition:0.3s;
-}
+        .btn-call:hover {
+            transform: translateY(-3px) scale(1.03);
+            background: #e6b800;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+        }
 
-.btn:hover{
-transform:scale(1.1);
-}
+        /* --- SERVICES SECTION (Modern Grid) --- */
+        .services {
+            padding: 80px 5%;
+            text-align: center;
+        }
 
-/* Services */
+        .services h2 {
+            margin-bottom: 50px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
 
-.services{
-padding:40px;
-text-align:center;
-}
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
 
-.service-box{
-background:white;
-padding:20px;
-margin:15px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
 
-.service-box:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #ffcc00;
+        }
 
-/* Contact */
+        .service-icon {
+            font-size: 45px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            display: block;
+        }
 
-.contact{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-}
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
 
-/* WhatsApp */
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-font-size:22px;
-animation:bounce 2s infinite;
-}
+        /* --- WHATSAPP FLOATING BUTTON (Add Jaan!) --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366; /* WhatsApp Green */
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-/* Animations */
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
+        .whatsapp-float img {
+            width: 38px;
+            height: 38px;
+        }
 
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
-}
-
-</style>
+        /* --- RESPONSIVE MIXINS (For Phones) --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            nav ul {
+                display: none; /* Mobile par menu hide, simple logo rakhein */
+            }
+            .services h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-☀ Krishna Solar
-</header>
+    <nav>
+        <div class="logo">Krishna Solar</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+    <header id="home" class="hero">
+        <h1>Apne Ghar Ko Solar Se Chalayen</h1>
+        <p>Sasti bijli aur pollution-free bharat ke liye aaj hi premium solar solutions lagwayen.</p>
+        <a href="tel:+917088785630" class="btn-call">Call Now</a>
+    </header>
 
-<section class="hero">
-<h1>Apne Ghar Ko Solar Se Chalayen</h1>
-<a class="btn" href="tel:+917088785630">Call Now</a>
-</section>
+    <section id="services" class="services">
+        <h2>Hamari Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <span class="service-icon">☀️</span>
+                <h3>Solar Installation</h3>
+                <p>Expert and complete rooftop solar installation for homes, offices, and factories.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3>Solar Maintenance</h3>
+                <p>Repair, cleaning, and professional service of existing solar panels to ensure maximum efficiency.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🔋</span>
+                <h3>Smart Battery Backup</h3>
+                <p>High-quality, long-lasting battery solutions for 24/7 uninterrupted power supply.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="services" id="services">
-
-<h2>Hamari Services</h2>
-
-<div class="service-box">
-<h3>☀ Solar Installation</h3>
-<p>Complete rooftop solar installation.</p>
-</div>
-
-<div class="service-box">
-<h3>🔧 Solar Maintenance</h3>
-<p>Repair and service of solar systems.</p>
-</div>
-
-<div class="service-box">
-<h3>💡 Free Consultation</h3>
-<p>Free solar advice for your home.</p>
-</div>
-
-</section>
-
-<section class="contact" id="contact">
-
-<h3>Contact Us</h3>
-<p>Phone: +91 7088785630</p>
-<p>Meerut, Uttar Pradesh</p>
-
-</section>
-
-<a class="whatsapp" href="https://wa.me/917088785630">💬</a>
+    <a href="https://wa.me/917088785630" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+    </a>
 
 </body>
 </html>
