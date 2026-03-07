@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Krishna Solar</title>
 
 <style>
@@ -8,66 +10,73 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f4f6f8;
+background:#f5f5f5;
+scroll-behavior:smooth;
 }
 
 /* Header */
 
 header{
-background:#0f7b3f;
+background:#0a7f3f;
 color:white;
-padding:20px;
+padding:15px;
 text-align:center;
-}
-
-header h1{
-margin:0;
+font-size:22px;
+font-weight:bold;
 }
 
 /* Menu */
 
 nav{
 background:#111;
-display:flex;
-justify-content:center;
+text-align:center;
 }
 
 nav a{
 color:white;
-padding:14px 20px;
+padding:14px;
+display:inline-block;
 text-decoration:none;
+transition:0.3s;
 }
 
 nav a:hover{
-background:#0f7b3f;
+background:#0a7f3f;
 }
 
-/* Hero Section */
+/* Hero */
 
 .hero{
+background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover;
 height:350px;
-background:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
-background-size:cover;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
+flex-direction:column;
 color:white;
 text-align:center;
+animation:fadeIn 2s;
 }
 
-.hero h2{
+.hero h1{
 background:rgba(0,0,0,0.5);
 padding:10px 20px;
+border-radius:5px;
 }
 
 .btn{
-background:#ffc107;
+background:#ffcc00;
 padding:12px 25px;
-color:black;
-text-decoration:none;
-font-weight:bold;
+margin-top:15px;
 border-radius:5px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
 }
 
 /* Services */
@@ -77,20 +86,54 @@ padding:40px;
 text-align:center;
 }
 
-.card{
+.service-box{
 background:white;
-margin:15px auto;
 padding:20px;
-max-width:300px;
+margin:15px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-footer{
+.service-box:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Contact */
+
+.contact{
 background:#111;
 color:white;
 text-align:center;
 padding:20px;
+}
+
+/* WhatsApp */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:22px;
+animation:bounce 2s infinite;
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
 }
 
 </style>
@@ -99,49 +142,50 @@ padding:20px;
 <body>
 
 <header>
-<h1>☀ Krishna Solar</h1>
-<p>Meerut Solar Installation Services</p>
+☀ Krishna Solar
 </header>
 
 <nav>
 <a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Projects</a>
-<a href="#">Contact</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <section class="hero">
-<h2>Apne ghar ko Solar se chalaiye</h2>
-<a href="tel:+917088785630" class="btn">Call Now</a>
+<h1>Apne Ghar Ko Solar Se Chalayen</h1>
+<a class="btn" href="tel:+917088785630">Call Now</a>
 </section>
 
-<section class="services">
+<section class="services" id="services">
 
-<h2>हमारी सेवाएं</h2>
+<h2>Hamari Services</h2>
 
-<div class="card">
-<h3>Solar Installation</h3>
-<p>Complete rooftop solar system installation.</p>
+<div class="service-box">
+<h3>☀ Solar Installation</h3>
+<p>Complete rooftop solar installation.</p>
 </div>
 
-<div class="card">
-<h3>Solar Maintenance</h3>
+<div class="service-box">
+<h3>🔧 Solar Maintenance</h3>
 <p>Repair and service of solar systems.</p>
 </div>
 
-<div class="card">
-<h3>Solar Consultation</h3>
-<p>Free solar energy consultation.</p>
+<div class="service-box">
+<h3>💡 Free Consultation</h3>
+<p>Free solar advice for your home.</p>
 </div>
 
 </section>
 
-<footer>
+<section class="contact" id="contact">
 
+<h3>Contact Us</h3>
 <p>Phone: +91 7088785630</p>
 <p>Meerut, Uttar Pradesh</p>
 
-</footer>
+</section>
+
+<a class="whatsapp" href="https://wa.me/917088785630">💬</a>
 
 </body>
 </html>
