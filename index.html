@@ -1,154 +1,80 @@
-8<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna Solar - Advanced Solar Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Krishna Solar Installation</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; text-align: center; }
         
-        /* Navigation */
-        nav { background: #1a1a1a; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .logo { font-weight: 700; font-size: 1.5rem; color: #ffcc00; }
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: #ffcc00; }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1509391366360-feaf9fa44853?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: white; padding: 20px;
+        /* Sliding Title Styling */
+        .header-banner { background: #000; color: #ffcc00; padding: 15px 0; overflow: hidden; white-space: nowrap; }
+        .sliding-name { 
+            display: inline-block; 
+            font-size: 24px; 
+            font-weight: bold; 
+            animation: slide-text 15s linear infinite; 
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .btn-call { background: #ffcc00; color: #000; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; display: inline-block; }
+        @keyframes slide-text {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
 
-        /* Price Calculator Section */
-        .calculator { padding: 60px 10%; background: #f9f9f9; text-align: center; }
-        .calc-box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
-        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
-        .result { font-weight: bold; color: #2ecc71; font-size: 1.2rem; margin-top: 15px; }
+        .section { padding: 40px 20px; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        .services { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+        .service-card { border-left: 5px solid #ffcc00; padding: 15px; background: #fff; width: 45%; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); }
 
-        /* Services Section */
-        .services { padding: 70px 10%; text-align: center; }
-        .service-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
-        .service-card { background: #fff; padding: 30px; border-radius: 15px; width: 45%; min-width: 280px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 5px solid #ffcc00; }
-
-        /* Contact Form */
-        .contact { padding: 60px 10%; background: #1a1a1a; color: white; text-align: center; }
-        .contact form { max-width: 600px; margin: 0 auto; text-align: left; }
-        .contact button { background: #ffcc00; border: none; padding: 15px 30px; font-weight: bold; border-radius: 8px; cursor: pointer; width: 100%; }
-
-        /* Footer */
-        footer { background: #111; color: #777; padding: 20px; text-align: center; font-size: 0.8rem; }
-
-        /* WhatsApp */
-        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.3s; }
-        .whatsapp:hover { transform: scale(1.1); }
-
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .service-card { width: 100%; } }
+        .form-section { background: #1a1a1a; color: #fff; padding: 40px 20px; margin-top: 40px; }
+        input, textarea { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
+        .submit-btn { background: #ffcc00; color: #000; font-weight: bold; cursor: pointer; border: none; padding: 12px 20px; width: 93%; }
+        
+        .footer { background: #000; color: #777; padding: 20px; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Krishna Solar</div>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#calculator">Calculator</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <div class="header-banner">
+        <div class="sliding-name">Krishna Solar Installation — Best Solar Solutions in Your City — Contact: 70887 85630</div>
+    </div>
 
-    <header id="home" class="hero">
-        <h1>Apne Ghar Ko Solar Se Chalayen</h1>
-        <p style="margin-bottom:25px;">Sasti Bijli, Behtar Bhavishya - Krishna Solar ke saath.</p>
-        <a href="tel:+917088785630" class="btn-call">Abhi Call Karein</a>
-    </header>
+    <div class="section">
+        <h2>Hamara Pichla Kaam (Live Projects)</h2>
+        <p>Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
+        <button style="background: #ffcc00; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">
+            📸 Mere Saare Kaam Ki Photos Dekhein
+        </button>
+    </div>
 
-    <section id="calculator" class="calculator">
-        <h2 style="margin-bottom: 30px;">Solar Requirement Calculator</h2>
-        <div class="calc-box">
-            <p>Apna mahine ka bijli bill daalein (₹):</p>
-            <input type="number" id="bill" placeholder="Example: 2000" oninput="calculateSolar()">
-            <div class="result" id="calcResult">System Size: -- KW</div>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">*Yeh ek anumanit (estimate) size hai.</p>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <h2>Hamari Expert Services</h2>
-        <div class="service-container">
+    <div class="section">
+        <h3>Hamari Expert Services</h3>
+        <div class="services">
             <div class="service-card">
-                <h3>Solar Installation</h3>
+                <h4>Solar Installation</h4>
                 <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
             </div>
             <div class="service-card">
-                <h3>AMC & Maintenance</h3>
+                <h4>AMC & Maintenance</h4>
                 <p>Panels ki safai aur technical checkup ki suvidha.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="contact">
-        <h2 style="margin-bottom: 30px;">Muft Salah Ke Liye Form Bharein</h2>
-        <form action="https://formspree.io/f/YOUR_ID" method="POST"> <input type="text" name="name" placeholder="Aapka Naam" required>
-            <input type="email" name="email" placeholder="Email (Optional)">
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <textarea name="message" placeholder="Aapka Sawal" style="width: 100%; height: 100px; border-radius: 8px; padding: 10px; margin: 10px 0;"></textarea>
-            <button type="submit">Submit Karein</button>
+    <div class="form-section">
+        <h3>Muft Salah Ke Liye Form Bharein</h3>
+        <form>
+            <input type="text" placeholder="Aapka Naam" required>
+            <input type="email" placeholder="Email (Optional)">
+            <input type="text" placeholder="Phone Number" value="70887 85630">
+            <textarea placeholder="Aapka Sawal" rows="4"></textarea>
+            <button type="submit" class="submit-btn">Submit Karein</button>
         </form>
-    </section>
+    </div>
 
-    <footer>
-        <p>© 2026 Krishna Solar | Powered by 70887 85630</p>
-    </footer>
-
-    <a href="https://wa.me/917088785630" class="whatsapp" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
-    </a>
-
-    <script>
-        function calculateSolar() {
-            let bill = document.getElementById('bill').value;
-            let kw = (bill / 1000).toFixed(1); // Rough estimate: 1000 bill per 1KW
-            if(bill > 0) {
-                document.getElementById('calcResult').innerHTML = "Aapko " + kw + " KW Solar ki zaroorat hai";
-            } else {
-                document.getElementById('calcResult').innerHTML = "System Size: -- KW";
-            }
-        }
-    </script>
+    <div class="footer">
+        © 2026 Krishna Solar Installation | Powered by 70887 85630
+    </div>
 
 </body>
 </html>
-<section id="work-gallery" style="padding: 40px 20px; text-align: center; background-color: #ffffff; font-family: sans-serif;">
-    <h2 style="color: #333; margin-bottom: 10px;">Hamara Pichla Kaam (Live Projects)</h2>
-    <p style="color: #666; margin-bottom: 25px;">Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
-
-    <div style="text-align: center; margin: 30px 0;">
-    <h2 style="font-family: sans-serif; color: #333;">Hamara Pichla Kaam (Live Projects)</h2>
-    <p style="color: #666;">Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
-    
-    <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" 
-       target="_blank" 
-       style="background-color: #ffcc00; 
-              color: #000; 
-              padding: 15px 25px; 
-              text-decoration: none; 
-              font-weight: bold; 
-              border-radius: 5px; 
-              display: inline-block;
-              font-family: sans-serif;
-              box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-       📸 Mere Saare Kaam Ki Photos Dekhein
-    </a>
-</div>
-
-<footer style="text-align: center; padding: 20px; background-color: #1a1a1a; color: #ffffff; font-family: sans-serif;">
-    <p>&copy; 2026 Krishna Solar | Powered by 
-        <a href="tel:7088785630" style="color: #ffcc00; text-decoration: none;">70887 85630</a>
-    </p>
-</footer>
