@@ -4,77 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Solar Installation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; text-align: center; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #fff; text-align: center; }
         
-        /* Sliding Title Styling */
-        .header-banner { background: #000; color: #ffcc00; padding: 15px 0; overflow: hidden; white-space: nowrap; }
-        .sliding-name { 
-            display: inline-block; 
-            font-size: 24px; 
-            font-weight: bold; 
-            animation: slide-text 15s linear infinite; 
-        }
-        @keyframes slide-text {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
+        /* 1. Sliding Header */
+        .marquee-container { background: #000; color: #ffcc00; padding: 10px 0; font-weight: bold; font-size: 20px; overflow: hidden; }
+        
+        /* 2. Services Section */
+        .section-title { margin-top: 40px; font-size: 24px; font-weight: bold; }
+        .services { display: flex; justify-content: center; gap: 15px; padding: 20px; flex-wrap: wrap; }
+        .card { border-left: 5px solid #ffcc00; padding: 20px; width: 150px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; text-align: left; }
+        .card h3 { font-size: 16px; margin-bottom: 10px; }
+        .card p { font-size: 13px; color: #555; line-height: 1.4; }
 
-        .section { padding: 40px 20px; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        
-        .services { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
-        .service-card { border-left: 5px solid #ffcc00; padding: 15px; background: #fff; width: 45%; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.05); }
+        /* 3. Photos Button Section */
+        .photo-section { padding: 40px 20px; background: #f9f9f9; }
+        .photo-btn { 
+            background: #ffcc00; color: #000; padding: 15px 25px; 
+            text-decoration: none; font-weight: bold; border-radius: 8px; 
+            display: inline-block; margin-top: 15px; transition: 0.3s;
+        }
+        .photo-btn:hover { background: #e6b800; }
 
-        .form-section { background: #1a1a1a; color: #fff; padding: 40px 20px; margin-top: 40px; }
-        input, textarea { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
-        .submit-btn { background: #ffcc00; color: #000; font-weight: bold; cursor: pointer; border: none; padding: 12px 20px; width: 93%; }
-        
-        .footer { background: #000; color: #777; padding: 20px; font-size: 14px; }
+        /* 4. Footer/Form Section */
+        .footer { background: #1a1a1a; color: #fff; padding: 40px 20px; margin-top: 30px; }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px;
+            background-color: #25d366; color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;
+        }
+        .whatsapp-float i { margin-top: 16px; }
     </style>
 </head>
 <body>
 
-    <div class="header-banner">
-        <div class="sliding-name">Krishna Solar Installation — Best Solar Solutions in Your City — Contact: 70887 85630</div>
+    <div class="marquee-container">
+        <marquee scrollamount="8">Krishna Solar Installation — Best Service in Your Area — Call: 70887 85630</marquee>
     </div>
 
-    <div class="section">
-        <h2>Hamara Pichla Kaam (Live Projects)</h2>
-        <p>Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
-        <button style="background: #ffcc00; border: none; padding: 10px 20px; font-weight: bold; border-radius: 5px; cursor: pointer;">
-            📸 Mere Saare Kaam Ki Photos Dekhein
-        </button>
-    </div>
-
-    <div class="section">
-        <h3>Hamari Expert Services</h3>
-        <div class="services">
-            <div class="service-card">
-                <h4>Solar Installation</h4>
-                <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
-            </div>
-            <div class="service-card">
-                <h4>AMC & Maintenance</h4>
-                <p>Panels ki safai aur technical checkup ki suvidha.</p>
-            </div>
+    <div class="section-title">Hamari Expert Services</div>
+    <div class="services">
+        <div class="card">
+            <h3>Solar Installation</h3>
+            <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
+        </div>
+        <div class="card">
+            <h3>AMC & Maintenance</h3>
+            <p>Panels ki safai aur technical checkup ki suvidha.</p>
         </div>
     </div>
 
-    <div class="form-section">
-        <h3>Muft Salah Ke Liye Form Bharein</h3>
-        <form>
-            <input type="text" placeholder="Aapka Naam" required>
-            <input type="email" placeholder="Email (Optional)">
-            <input type="text" placeholder="Phone Number" value="70887 85630">
-            <textarea placeholder="Aapka Sawal" rows="4"></textarea>
-            <button type="submit" class="submit-btn">Submit Karein</button>
-        </form>
+    <div class="photo-section">
+        <div class="section-title">Hamara Pichla Kaam (Live Projects)</div>
+        <p>Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
+        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" class="photo-btn">
+            📸 Mere Saare Kaam Ki Photos Dekhein
+        </a>
     </div>
 
     <div class="footer">
-        © 2026 Krishna Solar Installation | Powered by 70887 85630
-    </div>
+        <h3>Muft Salah Ke Liye Form Bharein</h3>
+        <p>Hum aapse jald hi sampark karenge.</p>
+        </div>
+
+    <a href="https://wa.me/917088785630" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
