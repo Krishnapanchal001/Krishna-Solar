@@ -6,71 +6,174 @@
     <title>Krishna Solar Installation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #fff; text-align: center; }
-        
-        /* 1. Sliding Header */
-        .marquee-container { background: #000; color: #ffcc00; padding: 10px 0; font-weight: bold; font-size: 20px; overflow: hidden; }
-        
-        /* 2. Services Section */
-        .section-title { margin-top: 40px; font-size: 24px; font-weight: bold; }
-        .services { display: flex; justify-content: center; gap: 15px; padding: 20px; flex-wrap: wrap; }
-        .card { border-left: 5px solid #ffcc00; padding: 20px; width: 150px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; text-align: left; }
-        .card h3 { font-size: 16px; margin-bottom: 10px; }
-        .card p { font-size: 13px; color: #555; line-height: 1.4; }
-
-        /* 3. Photos Button Section */
-        .photo-section { padding: 40px 20px; background: #f9f9f9; }
-        .photo-btn { 
-            background: #ffcc00; color: #000; padding: 15px 25px; 
-            text-decoration: none; font-weight: bold; border-radius: 8px; 
-            display: inline-block; margin-top: 15px; transition: 0.3s;
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-bg: #1a1a1a;
+            --white: #ffffff;
         }
-        .photo-btn:hover { background: #e6b800; }
 
-        /* 4. Footer/Form Section */
-        .footer { background: #1a1a1a; color: #fff; padding: 40px 20px; margin-top: 30px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
 
-        /* WhatsApp Floating Button */
+        /* 1. Sliding Title Animation */
+        .header-slider {
+            background-color: var(--dark-bg);
+            color: var(--primary-yellow);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .header-slider h1 {
+            display: inline-block;
+            padding-left: 100%;
+            animation: slideText 15s linear infinite;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        @keyframes slideText {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* 2. Hero Image Section */
+        .hero-section {
+            width: 100%;
+            height: 300px;
+            background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 3. Expert Services Section */
+        .section-padding { padding: 50px 20px; }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid var(--primary-yellow);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 280px;
+            border-radius: 8px;
+        }
+
+        /* 4. Project Button */
+        .btn-project {
+            background-color: var(--primary-yellow);
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .btn-project:hover { transform: scale(1.05); }
+
+        /* 5. Contact Form */
+        .form-section {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 50px 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 12px;
+            border-radius: 4px;
+            border: none;
+        }
+        button {
+            background: var(--primary-yellow);
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* 6. WhatsApp Floating Icon */
         .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px;
-            background-color: #25d366; color: #FFF; border-radius: 50px;
-            text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-decoration: none;
         }
-        .whatsapp-float i { margin-top: 16px; }
     </style>
 </head>
 <body>
 
-    <div class="marquee-container">
-        <marquee scrollamount="8">Krishna Solar Installation — Best Service in Your Area — Call: 70887 85630</marquee>
+    <div class="header-slider">
+        <h1>Welcome to Krishna Solar Installation - Hamari Expert Services Dekhein aur Sampark Karein</h1>
     </div>
 
-    <div class="section-title">Hamari Expert Services</div>
-    <div class="services">
-        <div class="card">
-            <h3>Solar Installation</h3>
-            <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
-        </div>
-        <div class="card">
-            <h3>AMC & Maintenance</h3>
-            <p>Panels ki safai aur technical checkup ki suvidha.</p>
+    <div class="hero-section"></div>
+
+    <div class="section-padding">
+        <h2>Hamari Expert Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <h3>Solar Installation</h3>
+                <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
+            </div>
+            <div class="service-card">
+                <h3>AMC & Maintenance</h3>
+                <p>Panels ki safai aur technical checkup ki suvidha.</p>
+            </div>
         </div>
     </div>
 
-    <div class="photo-section">
-        <div class="section-title">Hamara Pichla Kaam (Live Projects)</div>
+    <div class="section-padding" style="background: #fff;">
+        <h2>Hamara Pichla Kaam (Live Projects)</h2>
         <p>Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
-        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" class="photo-btn">
-            📸 Mere Saare Kaam Ki Photos Dekhein
+        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" class="btn-project" target="_blank">
+            📸 Hamare Kaam Ki Photos Dekhein
         </a>
     </div>
 
-    <div class="footer">
-        <h3>Muft Salah Ke Liye Form Bharein</h3>
+    <div class="form-section">
+        <h2>Muft Salah Ke Liye Form Bharein</h2>
         <p>Hum aapse jald hi sampark karenge.</p>
-        </div>
+        <form action="https://formspree.io/f/mwvrvzpa" method="POST">
+            <input type="text" name="name" placeholder="Aapka Naam" required>
+            <input type="email" name="email" placeholder="Aapki Email" required>
+            <textarea name="message" rows="4" placeholder="Aapki Enquiry" required></textarea>
+            <button type="submit">Submit Karein</button>
+        </form>
+    </div>
 
-    <a href="https://wa.me/917088785630" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/7088785630" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
