@@ -18,6 +18,34 @@
             background-color: #f4f4f4; overflow-x: hidden;
         }
 
+        /* --- Naya Logo Header Section --- */
+        .main-header {
+            background-color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            border-bottom: 2px solid var(--primary-yellow);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo-box img {
+            height: 70px; /* Logo ka size yahan se chhota-bada kar sakte hain */
+            width: auto;
+            display: block;
+        }
+        .header-contact {
+            text-align: right;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        /* Mobile ke liye logo aur text ki setting */
+        @media (max-width: 480px) {
+            .main-header { padding: 10px 15px; }
+            .logo-box img { height: 55px; }
+            .header-contact { font-size: 12px; }
+        }
+
         /* sliding Text with Phone Number */
         .header-slider {
             background-color: var(--dark-bg);
@@ -31,7 +59,7 @@
             display: inline-block;
             padding-left: 100%;
             animation: slideText 18s linear infinite;
-            font-size: 20px; 
+            font-size: 18px; 
             margin: 0;
             font-weight: bold;
         }
@@ -45,21 +73,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f4f4f4; /* Niche wale white section se match karne ke liye */
+            background-color: #f4f4f4;
         }
 
-        /* Solar Photo Section - Clear Image */
+        /* Solar Photo Section */
         .hero-photo {
             width: 100%;
             height: 350px;
-            /* Clear, non-shaded image */
             background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            display: block; /* Hamesha visible rahe */
+            display: block;
         }
 
         /* Centered Call Button below Photo */
         .btn-call-container {
-            padding: 20px 0 0px 0; /* Upar se space diya hai taaki photo se chipke nahi */
+            padding: 20px 0 0px 0;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -123,6 +150,16 @@
     </style>
 </head>
 <body>
+
+    <div class="main-header">
+        <div class="logo-box">
+            <img src="logo.png" alt="Krishna Solar Logo">
+        </div>
+        <div class="header-contact">
+            Sampark Karein:<br>
+            <i class="fas fa-phone-alt"></i> 70887 85630
+        </div>
+    </div>
 
     <div class="header-slider">
         <h1>Welcome to Krishna Solar Installation | Sampark Karein: 70887 85630</h1>
