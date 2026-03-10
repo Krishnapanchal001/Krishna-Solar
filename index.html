@@ -176,3 +176,32 @@
 
 </body>
 </html>
+
+function submitReview() {
+    const name = document.getElementById('reviewer-name').value;
+    const feedback = document.getElementById('reviewer-text').value;
+    const msg = document.getElementById('response-msg');
+    
+    // Check if stars are selected
+    if (selectedRating === 0 || name === "") {
+        msg.style.color = "red";
+        msg.innerText = "Please enter your name and select stars!";
+        return;
+    }
+
+    // WhatsApp Message Format taiyar karna
+    const myNumber = "917088785630"; // Aapka number International format mein
+    const messageText = `*New Review!*%0A%0A*Name:* ${name}%0A*Rating:* ${selectedRating} Stars ⭐%0A*Feedback:* ${feedback}`;
+
+    // WhatsApp URL banana
+    const whatsappUrl = `https://wa.me/${myNumber}?text=${messageText}`;
+
+    // Success Message dikhana
+    msg.style.color = "#28a745";
+    msg.innerText = "Redirecting to WhatsApp...";
+
+    // User ko WhatsApp par bhej dena
+    setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+    }, 1000);
+}
