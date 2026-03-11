@@ -9,8 +9,8 @@
         :root {
             --primary-yellow: #FFD700;
             --white: #ffffff;
-            --text-grey: #666; /* New grey for subtle text */
-            --dark-text: #333; /* For phone number highlight */
+            --text-grey: #666; 
+            --dark-text: #333;
         }
 
         body {
@@ -19,18 +19,18 @@
             background-color: #f4f4f4; overflow-x: hidden;
         }
 
-        /* --- Updated Premium Header Section --- */
+        /* --- Header Section --- */
         .main-header {
             background-color: var(--white);
             display: flex;
             align-items: center;
             padding: 5px 3%;
-            /* Cleaner borders */
-            border-bottom: 1px solid #e0e0e0; /* Subtle grey separator */
-            border-top: 3px solid var(--primary-yellow); /* Yellow line at the very top */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Softer shadow */
+            border-bottom: 1px solid #e0e0e0;
+            border-top: 3px solid var(--primary-yellow);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             height: 75px;
             position: relative;
+            overflow: hidden;
         }
         
         .logo-box {
@@ -46,7 +46,7 @@
             display: block;
         }
 
-        /* sliding Text Section - White background, grey/black text */
+        /* --- Updated Fast Slider Logic --- */
         .header-slider {
             flex-grow: 1;
             height: 40px;
@@ -54,32 +54,31 @@
             white-space: nowrap;
             display: flex;
             align-items: center;
-            position: relative;
         }
         
         .header-slider h1 {
             display: inline-block;
-            position: absolute;
             margin: 0;
-            font-size: 14px; /* Slightly smaller for premium feel */
-            font-weight: 500; /* Regular weight, not bold */
-            color: var(--text-grey); /* Text is a lighter grey */
-            padding-left: 100%;
-            animation: slideText 22s linear infinite; /* Slower, smoother animation */
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-grey);
+            padding-left: 10px;
+            /* Speed fast karne ke liye 12s rakha hai, ise 10s bhi kar sakte hain */
+            animation: slideText 12s linear infinite; 
         }
         
-        /* Highlight specific parts like the phone number */
         .phone-highlight {
             color: var(--dark-text);
             font-weight: bold;
         }
 
+        /* Continuous Loop Fix: Gap khatam karne ke liye 50% movement */
         @keyframes slideText {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-160%); } /* Adjusted for smoother loop */
+            100% { transform: translateX(-50%); }
         }
 
-        /* --- Hero Section & below remain same --- */
+        /* --- Hero Section --- */
         .hero-container {
             display: flex;
             flex-direction: column;
@@ -93,7 +92,6 @@
             display: block;
         }
 
-        /* Call Button Section */
         .btn-call-container {
             padding: 20px 0;
             width: 100%;
@@ -154,7 +152,10 @@
         </div>
         
         <div class="header-slider">
-            <h1>Welcome to Krishna Solar Installation | Sampark Karein: <span class="phone-highlight">70887 85630</span> | Hamari Expert Services ke liye call karein.</h1>
+            <h1>
+                Welcome to Krishna Solar Installation | Sampark Karein: <span class="phone-highlight">70887 85630</span> | Hamari Expert Services ke liye call karein. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Welcome to Krishna Solar Installation | Sampark Karein: <span class="phone-highlight">70887 85630</span> | Hamari Expert Services ke liye call karein.
+            </h1>
         </div>
     </div>
 
