@@ -18,49 +18,57 @@
             background-color: #f4f4f4; overflow-x: hidden;
         }
 
-        /* --- New Header with Logo --- */
+        /* --- Updated Header with Integrated Slider --- */
         .main-header {
             background-color: var(--white);
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 8px 5%;
+            padding: 5px 3%;
             border-bottom: 2px solid var(--primary-yellow);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 70px;
         }
+        
+        .logo-box {
+            flex-shrink: 0;
+            z-index: 10;
+            background: white;
+            padding-right: 10px;
+        }
+        
         .logo-box img {
-            height: 65px; 
+            height: 60px; 
             width: auto;
             display: block;
         }
-        .header-contact {
-            text-align: right;
-            font-weight: bold;
-            color: #333;
-            font-size: 13px;
-            line-height: 1.4;
-        }
 
-        /* sliding Text Section */
+        /* sliding Text Section - Now starts next to logo */
         .header-slider {
+            flex-grow: 1;
             background-color: var(--dark-bg);
             color: var(--primary-yellow);
-            padding: 10px 0;
+            height: 40px;
             overflow: hidden;
             white-space: nowrap;
-            border-bottom: 2px solid var(--primary-yellow);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
+        
         .header-slider h1 {
             display: inline-block;
-            padding-left: 100%;
-            animation: slideText 18s linear infinite;
-            font-size: 18px; 
+            position: absolute;
             margin: 0;
+            font-size: 16px;
             font-weight: bold;
+            padding-left: 100%;
+            animation: slideText 15s linear infinite;
         }
+
         @keyframes slideText {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-150%); }
         }
 
         /* Hero Section */
@@ -111,15 +119,6 @@
             width: 280px; border-radius: 8px;
         }
 
-        /* Projects Section */
-        .btn-project {
-            background-color: var(--primary-yellow);
-            color: black; padding: 12px 25px;
-            text-decoration: none; font-weight: bold;
-            border-radius: 5px; display: inline-block;
-            margin-top: 15px;
-        }
-
         /* Form Section */
         .form-section {
             background-color: var(--dark-bg);
@@ -145,14 +144,10 @@
         <div class="logo-box">
             <img src="logo.png" alt="Krishna Solar Logo">
         </div>
-        <div class="header-contact">
-            Sampark Karein:<br>
-            <i class="fas fa-phone-alt"></i> 70887 85630
+        
+        <div class="header-slider">
+            <h1>Welcome to Krishna Solar Installation | Sampark Karein: 70887 85630 | Hamari Expert Services ke liye call karein.</h1>
         </div>
-    </div>
-
-    <div class="header-slider">
-        <h1>Welcome to Krishna Solar Installation | Sampark Karein: 70887 85630</h1>
     </div>
 
     <div class="hero-container">
@@ -181,7 +176,7 @@
     <div class="section-padding" style="background: #fff;">
         <h2>Hamara Pichla Kaam (Live Projects)</h2>
         <p>Krishna Solar Installation dwara kiye gaye asli sites ki photos niche dekhein.</p>
-        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" class="btn-project" target="_blank">
+        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" style="background-color: var(--primary-yellow); color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 15px;" target="_blank">
             📸 Hamare Kaam Ki Photos Dekhein
         </a>
     </div>
