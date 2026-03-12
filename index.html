@@ -9,7 +9,7 @@
         :root {
             --primary-yellow: #FFD700;
             --white: #ffffff;
-            --side-bg: #0a1118; /* Premium Dark Navy */
+            --side-bg: #0a1118; 
             --text-grey: #a4b0be;
             --icon-blue: #3498db;
         }
@@ -19,7 +19,7 @@
             margin: 0; padding: 0; background-color: #f4f4f4; overflow-x: hidden;
         }
 
-        /* --- Header & Slider --- */
+        /* --- Header Section --- */
         .main-header {
             background-color: var(--white);
             display: flex; align-items: center;
@@ -28,76 +28,76 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: 75px;
             position: sticky; top: 0; z-index: 999;
         }
-
         .menu-btn { font-size: 24px; cursor: pointer; margin-right: 15px; color: #333; }
         .logo-box img { height: 50px; width: auto; }
-        
         .header-slider { flex-grow: 1; height: 40px; overflow: hidden; position: relative; display: flex; align-items: center; }
         .header-slider h1 {
-            position: absolute; white-space: nowrap; font-size: 14px; font-weight: 500;
+            position: absolute; white-space: nowrap; font-size: 13px; font-weight: 500;
             color: #666; animation: slideText 22s linear infinite; margin: 0;
         }
         @keyframes slideText { 0% { transform: translateX(100%); } 100% { transform: translateX(-180%); } }
 
-        /* --- Side Navigation (Premium Interface) --- */
+        /* --- Sidenav (Sidebar) --- */
         .sidenav {
             height: 100%; width: 0; position: fixed;
             z-index: 1001; top: 0; left: 0;
             background-color: var(--side-bg);
             overflow-x: hidden; transition: 0.5s;
-            display: flex; flex-direction: column; /* For vertical alignment */
+            display: flex; flex-direction: column;
         }
-
         .sidenav .closebtn {
             position: absolute; top: 15px; right: 20px;
             font-size: 30px; color: white; text-decoration: none;
         }
-
-        .menu-header { text-align: center; padding: 40px 20px 20px; }
-        
+        .menu-header { text-align: center; padding: 40px 15px 15px; }
         .logo-container {
-            width: 100px; height: 100px; background: white;
-            border-radius: 50%; margin: 0 auto 15px;
+            width: 90px; height: 90px; background: white;
+            border-radius: 50%; margin: 0 auto 10px;
             display: flex; align-items: center; justify-content: center;
-            border: 4px solid #1e272e;
+            border: 3px solid #1e272e;
         }
-        .logo-container img { width: 75%; }
+        .logo-container img { width: 70%; }
         
-        .menu-header h2 { color: white; font-size: 20px; margin: 10px 0; font-weight: 500; }
-
-        /* Social Icons Style */
-        .social-links { display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; }
-        .social-links a {
-            width: 35px; height: 35px; background: #1e272e;
-            border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; color: var(--text-grey); text-decoration: none; font-size: 14px;
+        /* Updated Name Style */
+        .menu-header h2 { 
+            color: white; font-size: 16px; margin: 10px 0; 
+            font-weight: 600; text-transform: uppercase; line-height: 1.4;
         }
 
-        /* Navigation Links */
+        .social-links { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .social-links a {
+            width: 32px; height: 32px; background: #1e272e;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: var(--text-grey); text-decoration: none; font-size: 13px;
+        }
+
         .nav-links-container { flex-grow: 1; display: flex; flex-direction: column; }
         .nav-links-container a {
-            padding: 15px 30px; text-decoration: none; font-size: 17px;
+            padding: 12px 25px; text-decoration: none; font-size: 16px;
             color: var(--text-grey); display: flex; align-items: center; transition: 0.3s;
         }
-        .nav-links-container a i { margin-right: 15px; width: 25px; color: var(--icon-blue); font-size: 18px; }
+        .nav-links-container a i { margin-right: 12px; width: 20px; color: var(--icon-blue); text-align: center; }
         .nav-links-container a:hover { color: white; background: #16212c; }
 
-        /* Contact Link Position (Fixing it at bottom) */
-        .contact-link { margin-top: auto; margin-bottom: 30px; border-top: 1px solid #1e272e; padding-top: 10px; }
+        /* Contact Section at Bottom */
+        .contact-link { 
+            margin-top: auto; margin-bottom: 25px; 
+            border-top: 1px solid #1e272e; padding-top: 15px !important;
+            font-size: 14px !important; /* Smaller text to fit one line */
+        }
 
-        /* Overlay */
         .overlay { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1000; }
 
-        /* --- Page Sections --- */
-        .hero-photo { width: 100%; height: 300px; background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1350&q=80') center/cover; }
-        .btn-call-hero { background: var(--primary-yellow); color: #000; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; margin: 20px 0; }
-        .section-padding { padding: 40px 20px; text-align: center; }
-        .service-card { background: white; padding: 20px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 280px; border-radius: 8px; margin: 10px auto; }
+        /* --- Sections Style --- */
+        .hero-photo { width: 100%; height: 280px; background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1350&q=80') center/cover; }
+        .btn-call-hero { background: var(--primary-yellow); color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; margin: 20px 0; font-size: 16px; }
+        .section-padding { padding: 30px 20px; text-align: center; }
+        .service-card { background: white; padding: 20px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 300px; border-radius: 8px; margin: 15px auto; }
         .form-section { background: #1a1a1a; color: white; padding: 40px 20px; }
         form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-        input, textarea { padding: 12px; border-radius: 4px; border: none; }
-        .btn-submit { background: var(--primary-yellow); font-weight: bold; cursor: pointer; padding: 15px; border: none; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 100; text-decoration: none; }
+        input, textarea { padding: 12px; border-radius: 4px; border: none; font-size: 16px; }
+        .btn-submit { background: var(--primary-yellow); font-weight: bold; cursor: pointer; padding: 15px; border: none; border-radius: 5px; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 100; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
@@ -109,26 +109,26 @@
             <div class="logo-container">
                 <img src="logo.png" alt="Logo">
             </div>
-            <h2>Krishna Solar</h2>
+            <h2>Krishna Solar<br>Installation</h2>
             
             <div class="social-links">
                 <a href="#"><i class="fab fa-x-twitter"></i></a>
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-skype"></i></a>
+                <a href="https://wa.me/7088785630"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
 
         <div class="nav-links-container">
             <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="#services"><i class="fas fa-user"></i> About</a>
-            <a href="#projects"><i class="fas fa-file-alt"></i> Our Client</a>
+            <a href="#services"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="#projects"><i class="fas fa-users"></i> Our Clients</a>
             <a href="#projects"><i class="fas fa-images"></i> Portfolio</a>
-            <a href="#services"><i class="fas fa-server"></i> Services</a>
+            <a href="#services"><i class="fas fa-cog"></i> Services</a>
             
             <a href="tel:7088785630" class="contact-link">
-                <i class="fas fa-envelope"></i> Contact: 70887 85630
+                <i class="fas fa-phone-alt"></i> Contact: 70887 85630
             </a>
         </div>
     </div>
@@ -139,7 +139,7 @@
         <div class="menu-btn" onclick="openNav()"><i class="fas fa-bars"></i></div>
         <div class="logo-box"><img src="logo.png" alt="Logo"></div>
         <div class="header-slider">
-            <h1>Welcome to Krishna Solar | Call: <span style="font-weight: bold;">70887 85630</span> | Solar Installation Experts</h1>
+            <h1>Welcome to Krishna Solar Installation | Call: <span style="font-weight: bold;">70887 85630</span> | Solar Experts</h1>
         </div>
     </div>
 
@@ -149,7 +149,7 @@
     </div>
 
     <div class="section-padding" id="services">
-        <h2>Hamari Expert Services</h2>
+        <h2>Our Expert Services</h2>
         <div class="service-card">
             <h3>Solar Installation</h3>
             <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
@@ -161,17 +161,18 @@
     </div>
 
     <div class="section-padding" id="projects" style="background: #fff;">
-        <h2>Live Projects</h2>
-        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" style="background: var(--primary-yellow); color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;">📸 Photos Dekhein</a>
+        <h2>Our Live Projects</h2>
+        <p>Hamare kaam ki asli photos dekhne ke liye niche button par click karein.</p>
+        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" style="background: var(--primary-yellow); color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px;">📸 View Gallery</a>
     </div>
 
     <div class="form-section">
-        <h2>Enquiry Form</h2>
+        <h2>Free Consultation</h2>
         <form action="https://formspree.io/f/mwvrvzpa" method="POST">
             <input type="text" name="name" placeholder="Aapka Naam" required>
             <input type="email" name="email" placeholder="Aapki Email" required>
             <textarea name="message" rows="4" placeholder="Aapki Enquiry" required></textarea>
-            <button type="submit" class="btn-submit">Submit Karein</button>
+            <button type="submit" class="btn-submit">Send Message</button>
         </form>
     </div>
 
@@ -179,7 +180,7 @@
 
     <script>
         function openNav() {
-            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("mySidenav").style.width = "280px";
             document.getElementById("menuOverlay").style.display = "block";
         }
         function closeNav() {
