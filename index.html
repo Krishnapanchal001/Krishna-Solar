@@ -19,7 +19,7 @@
             margin: 0; padding: 0; background-color: #f4f4f4; overflow-x: hidden;
         }
 
-        /* --- Header Section (Change 1: Text Speed) --- */
+        /* --- Fast Sliding Header --- */
         .main-header {
             background-color: var(--white);
             display: flex; align-items: center;
@@ -35,13 +35,12 @@
         .header-slider h1 {
             position: absolute; white-space: nowrap; font-size: 13px; font-weight: 500;
             color: #666; 
-            /* CHANGE: animation-duration changed to 12s for FAST scrolling */
-            animation: slideText 12s linear infinite; 
+            animation: slideText 8s linear infinite; /* Speed increased to 8s */
             margin: 0;
         }
-        @keyframes slideText { 0% { transform: translateX(100%); } 100% { transform: translateX(-220%); } }
+        @keyframes slideText { 0% { transform: translateX(100%); } 100% { transform: translateX(-250%); } }
 
-        /* --- Sidenav (Sidebar) --- */
+        /* --- Sidenav --- */
         .sidenav {
             height: 100%; width: 0; position: fixed;
             z-index: 1001; top: 0; left: 0;
@@ -49,128 +48,76 @@
             overflow-x: hidden; transition: 0.5s;
             display: flex; flex-direction: column;
         }
-        .sidenav .closebtn {
-            position: absolute; top: 15px; right: 20px;
-            font-size: 30px; color: white; text-decoration: none;
-        }
+        .sidenav .closebtn { position: absolute; top: 15px; right: 20px; font-size: 30px; color: white; text-decoration: none; }
         .menu-header { text-align: center; padding: 40px 15px 15px; }
-        .logo-container {
-            width: 90px; height: 90px; background: white;
-            border-radius: 50%; margin: 0 auto 10px;
-            display: flex; align-items: center; justify-content: center;
-            border: 3px solid #1e272e;
-        }
+        .logo-container { width: 90px; height: 90px; background: white; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; border: 3px solid #1e272e; }
         .logo-container img { width: 70%; }
-        .menu-header h2 { 
-            color: white; font-size: 16px; margin: 10px 0; 
-            font-weight: 600; text-transform: uppercase; line-height: 1.4;
-        }
-        .social-links { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
-        .social-links a {
-            width: 32px; height: 32px; background: #1e272e;
-            border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; color: var(--text-grey); text-decoration: none; font-size: 13px;
-        }
+        .menu-header h2 { color: white; font-size: 16px; margin: 10px 0; font-weight: 600; text-transform: uppercase; line-height: 1.4; }
         .nav-links-container { flex-grow: 1; display: flex; flex-direction: column; }
-        .nav-links-container a {
-            padding: 12px 25px; text-decoration: none; font-size: 16px;
-            color: var(--text-grey); display: flex; align-items: center; transition: 0.3s;
-        }
-        .nav-links-container a i { margin-right: 12px; width: 20px; color: var(--icon-blue); text-align: center; }
-        .nav-links-container a:hover { color: white; background: #16212c; }
+        .nav-links-container a { padding: 12px 25px; text-decoration: none; font-size: 16px; color: var(--text-grey); display: flex; align-items: center; transition: 0.3s; }
+        .nav-links-container a i { margin-right: 12px; width: 20px; color: var(--icon-blue); }
         .contact-link { margin-top: auto; margin-bottom: 25px; border-top: 1px solid #1e272e; padding-top: 15px !important; font-size: 14px !important; }
         .overlay { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1000; }
 
-        /* --- Hero Section (Change 2: Image Ratio 9:16 Portrait) --- */
+        /* --- Hero Section with Typing Effect on Image --- */
         .hero-wrapper {
             width: 100%;
-            /* 9:16 Aspect Ratio is roughly 177% padding-top on the container */
             position: relative;
-            padding-top: 177.77%; 
-            background: #f4f4f4;
+            padding-top: 177.77%; /* 9:16 Portrait */
             overflow: hidden;
         }
         .hero-photo { 
-            position: absolute;
-            top: 0; left: 0;
+            position: absolute; top: 0; left: 0;
             width: 100%; height: 100%; 
-            background: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1350&q=80') center/cover; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1350&q=80') center/cover; 
         }
 
-        /* Call Button Container with Typewriter */
-        .call-container-with-typewriter {
+        /* Typing Effect on Image */
+        .typewriter-on-image {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
             text-align: center;
-            padding: 20px;
-            background-color: #f4f4f4;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
         }
 
-        /* CHANGE 3: Typewriter Effect Styles */
-        .typewriter {
-            font-size: 18px;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 20px;
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid var(--primary-yellow); /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
+        .typing-text {
+            border-right: .15em solid var(--primary-yellow);
+            white-space: nowrap;
+            overflow: hidden;
             display: inline-block;
-            animation: 
-              typing 3.5s steps(30, end),
-              blink-caret .75s step-end infinite;
+            animation: typing 3.5s steps(30, end) infinite, blink-caret .75s step-end infinite;
         }
 
-        /* The typing effect */
-        @keyframes typing {
-          from { width: 0 }
-          to { width: 100% }
-        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary-yellow); } }
 
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-          from, to { border-color: transparent }
-          50% { border-color: var(--primary-yellow); }
-        }
-
-        /* --- Sections Style --- */
-        .btn-call-hero { background: var(--primary-yellow); color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; font-size: 16px; margin-top: 10px;}
+        /* --- Other Sections --- */
         .section-padding { padding: 30px 20px; text-align: center; }
         .service-card { background: white; padding: 20px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 300px; border-radius: 8px; margin: 15px auto; text-align: left;}
         .form-section { background: #1a1a1a; color: white; padding: 40px 20px; }
         form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
         input, textarea { padding: 12px; border-radius: 4px; border: none; font-size: 16px; }
         .btn-submit { background: var(--primary-yellow); font-weight: bold; cursor: pointer; padding: 15px; border: none; border-radius: 5px; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 100; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 100; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        
         <div class="menu-header">
-            <div class="logo-container">
-                <img src="logo.png" alt="Logo">
-            </div>
+            <div class="logo-container"><img src="logo.png" alt="Logo"></div>
             <h2>Krishna Solar<br>Installation</h2>
-            
-            <div class="social-links">
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/7088785630"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
         </div>
-
         <div class="nav-links-container">
             <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="#services"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="#projects"><i class="fas fa-users"></i> Our Clients</a>
-            <a href="#projects"><i class="fas fa-images"></i> Portfolio</a>
             <a href="#services"><i class="fas fa-cog"></i> Services</a>
-            <a href="tel:7088785630" class="contact-link">
-                <i class="fas fa-phone-alt"></i> Contact: 70887 85630
-            </a>
+            <a href="tel:7088785630" class="contact-link"><i class="fas fa-phone-alt"></i> Contact: 70887 85630</a>
         </div>
     </div>
 
@@ -180,18 +127,15 @@
         <div class="menu-btn" onclick="openNav()"><i class="fas fa-bars"></i></div>
         <div class="logo-box"><img src="logo.png" alt="Logo"></div>
         <div class="header-slider">
-            <h1>Welcome to Krishna Solar Installation | Call: <span style="font-weight: bold;">70887 85630</span> | Solar Experts</h1>
+            <h1>Welcome to Krishna Solar Installation | Call: 70887 85630 | Solar Experts</h1>
         </div>
     </div>
 
     <div class="hero-wrapper">
         <div class="hero-photo"></div>
-    </div>
-
-    <div class="call-container-with-typewriter">
-        <div class="typewriter">All type solar installation</div>
-        <br>
-        <a href="tel:7088785630" class="btn-call-hero"><i class="fas fa-phone-alt"></i> Hamein Call Karein</a>
+        <div class="typewriter-on-image">
+            <span class="typing-text">All type solar installation</span>
+        </div>
     </div>
 
     <div class="section-padding" id="services">
@@ -200,20 +144,9 @@
             <h3>Solar Installation</h3>
             <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
         </div>
-        <div class="service-card">
-            <h3>AMC & Maintenance</h3>
-            <p>Panels ki safai aur technical checkup ki suvidha.</p>
-        </div>
-    </div>
-
-    <div class="section-padding" id="projects" style="background: #fff;">
-        <h2>Our Live Projects</h2>
-        <p>Hamare kaam ki asli photos dekhne ke liye niche button par click karein.</p>
-        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" style="background: var(--primary-yellow); color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px;">📸 View Gallery</a>
     </div>
 
     <div class="form-section">
-        <h2>Free Consultation</h2>
         <form action="https://formspree.io/f/mwvrvzpa" method="POST">
             <input type="text" name="name" placeholder="Aapka Naam" required>
             <input type="email" name="email" placeholder="Aapki Email" required>
@@ -225,14 +158,8 @@
     <a href="https://wa.me/7088785630" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "280px";
-            document.getElementById("menuOverlay").style.display = "block";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("menuOverlay").style.display = "none";
-        }
+        function openNav() { document.getElementById("mySidenav").style.width = "280px"; document.getElementById("menuOverlay").style.display = "block"; }
+        function closeNav() { document.getElementById("mySidenav").style.width = "0"; document.getElementById("menuOverlay").style.display = "none"; }
     </script>
 </body>
 </html>
