@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna Solar Installation | 70887 85630</title>
+    <title>Krishna Solar Installation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -31,6 +31,7 @@
         .menu-btn { font-size: 24px; cursor: pointer; margin-right: 15px; color: #333; }
         .logo-box img { height: 50px; width: auto; }
         
+        /* Updated Smooth Sliding Text (No Gap) */
         .header-slider { flex-grow: 1; height: 40px; overflow: hidden; position: relative; }
         .marquee-content {
             display: flex;
@@ -38,7 +39,7 @@
             animation: slideText 15s linear infinite;
         }
         .marquee-content h1 {
-            font-size: 13px; font-weight: 600; color: #444; margin: 0; padding-right: 80px;
+            font-size: 13px; font-weight: 500; color: #666; margin: 0; padding-right: 80px;
             white-space: nowrap; line-height: 40px;
         }
         @keyframes slideText { 
@@ -69,42 +70,32 @@
         .menu-header h2 { color: white; font-size: 16px; margin: 10px 0; font-weight: 600; text-transform: uppercase; }
 
         .nav-links-container { flex-grow: 1; display: flex; flex-direction: column; }
-        .nav-links-container a { padding: 12px 25px; text-decoration: none; font-size: 16px; color: var(--text-grey); display: flex; align-items: center; cursor: pointer; }
+        .nav-links-container a { padding: 12px 25px; text-decoration: none; font-size: 16px; color: var(--text-grey); display: flex; align-items: center; }
         .nav-links-container a i { margin-right: 12px; width: 20px; color: var(--icon-blue); text-align: center; }
 
         .overlay { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1000; }
 
-        /* --- Hero Photo (9:16) --- */
-        .hero-photo-wrapper { width: 100%; display: flex; justify-content: center; background: #fff; }
+        /* --- Updated Hero Photo (9:16 Aspect Ratio) --- */
+        .hero-photo-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+        }
         .hero-photo { 
-            width: 100%; max-width: 500px; aspect-ratio: 9 / 16; 
+            width: 100%; 
+            max-width: 500px; /* Mobile Friendly width */
+            aspect-ratio: 9 / 16; 
             background: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
         }
 
-        /* --- 9:16 Modal Style --- */
-        .modal {
-            display: none; position: fixed; z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center; align-items: center;
-        }
-        .modal-content {
-            width: 90%; max-width: 350px; aspect-ratio: 9 / 16;
-            background: var(--white); border-radius: 15px;
-            overflow-y: auto; padding: 20px; position: relative;
-            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 25px; cursor: pointer; color: #333; }
-
         .section-padding { padding: 30px 20px; text-align: center; }
-        .service-card { background: white; padding: 20px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 15px auto; border-radius: 8px; text-align: left; }
-        
-        .form-section { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; }
+        .service-card { background: white; padding: 20px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 300px; border-radius: 8px; margin: 15px auto; }
+        .form-section { background: #1a1a1a; color: white; padding: 40px 20px; }
         form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-        input, textarea { padding: 12px; border-radius: 4px; border: none; font-size: 16px; width: 100%; box-sizing: border-box; }
-        .btn-submit { background: var(--primary-yellow); font-weight: bold; cursor: pointer; padding: 15px; border: none; border-radius: 5px; width: 100%; }
-        
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 100; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        input, textarea { padding: 12px; border-radius: 4px; border: none; font-size: 16px; }
+        .btn-submit { background: var(--primary-yellow); font-weight: bold; cursor: pointer; padding: 15px; border: none; border-radius: 5px; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 100; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
@@ -118,38 +109,12 @@
             <h2>Krishna Solar<br>Installation</h2>
         </div>
         <div class="nav-links-container">
-            <a onclick="closeNav()"><i class="fas fa-home"></i> Home</a>
-            <a onclick="openModal('serviceModal')"><i class="fas fa-cog"></i> Services</a>
-            <a onclick="openModal('galleryModal')"><i class="fas fa-images"></i> Gallery</a>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#services"><i class="fas fa-cog"></i> Services</a>
+            <a href="#projects"><i class="fas fa-images"></i> Gallery</a>
             <a href="tel:7088785630" style="margin-top:auto; padding-bottom: 30px;">
                 <i class="fas fa-phone-alt"></i> 70887 85630
             </a>
-        </div>
-    </div>
-
-    <div id="serviceModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('serviceModal')">&times;</span>
-            <h2 style="color: #333;">Our Services</h2>
-            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px; margin-bottom:15px;">
-            <div class="service-card">
-                <h3>Solar Install</h3>
-                <p>On-Grid & Off-Grid expert solutions.</p>
-            </div>
-            <div class="service-card">
-                <h3>Maintenance</h3>
-                <p>Regular cleaning & technical checkups.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('galleryModal')">&times;</span>
-            <h2 style="color: #333;">Gallery</h2>
-            <p>Our Recent Live Projects</p>
-            <img src="https://images.unsplash.com/photo-1548333198-e5120aede24e?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px; margin-bottom:15px;">
-            <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" style="background: var(--primary-yellow); color: black; padding: 12px; text-decoration: none; font-weight: bold; border-radius: 5px; display: block;">📸 View All on Drive</a>
         </div>
     </div>
 
@@ -170,12 +135,21 @@
         <div class="hero-photo"></div>
     </div>
 
-    <div class="section-padding">
-        <h2>Expert Solar Solutions</h2>
+    <div class="section-padding" id="services">
+        <h2>Our Expert Services</h2>
         <div class="service-card">
             <h3>Solar Installation</h3>
-            <p>On-Grid aur Off-Grid expert team ke dwara install karwayein.</p>
+            <p>On-Grid aur Off-Grid solar installation expert team ke dwara.</p>
         </div>
+        <div class="service-card">
+            <h3>AMC & Maintenance</h3>
+            <p>Panels ki safai aur technical checkup ki suvidha.</p>
+        </div>
+    </div>
+
+    <div class="section-padding" id="projects" style="background: #fff;">
+        <h2>Our Live Projects</h2>
+        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" style="background: var(--primary-yellow); color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px;">📸 View Gallery</a>
     </div>
 
     <div class="form-section">
@@ -183,10 +157,9 @@
         <form action="https://formspree.io/f/mwvrvzpa" method="POST">
             <input type="text" name="name" placeholder="Aapka Naam" required>
             <input type="email" name="email" placeholder="Aapki Email" required>
-            <textarea name="message" rows="4" placeholder="Aapki Enquiry (Solar Requirement)" required></textarea>
-            <button type="submit" class="btn-submit">SEND MESSAGE</button>
+            <textarea name="message" rows="4" placeholder="Aapki Enquiry" required></textarea>
+            <button type="submit" class="btn-submit">Send Message</button>
         </form>
-        <p style="margin-top: 20px; font-size: 14px;">Direct Call: 70887 85630</p>
     </div>
 
     <a href="https://wa.me/7088785630" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -200,10 +173,9 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("menuOverlay").style.display = "none";
         }
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-            closeNav();
-        }
+    </script>
+</body>
+</html>    }
         function closeModal(id) {
             document.getElementById(id).style.display = "none";
         }
