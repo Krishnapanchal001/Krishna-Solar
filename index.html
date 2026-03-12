@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna Solar Installation</title>
+    <title>Krishna Solar Installation | Meerut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -16,7 +16,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0; padding: 0; background-color: #f4f4f4; overflow-x: hidden;
+            margin: 0; padding: 0; background-color: #f8f9fa; overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* --- Header Section --- */
@@ -38,7 +39,7 @@
             animation: slideText 15s linear infinite;
         }
         .marquee-content h1 {
-            font-size: 13px; font-weight: 500; color: #666; margin: 0; padding-right: 80px;
+            font-size: 13px; font-weight: 600; color: #444; margin: 0; padding-right: 80px;
             white-space: nowrap; line-height: 40px;
         }
         @keyframes slideText { 
@@ -73,39 +74,37 @@
 
         .overlay { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1000; }
 
-        /* --- Hero Photo (9:16) --- */
+        /* --- Hero Photo --- */
         .hero-photo-wrapper { width: 100%; display: flex; justify-content: center; background: #fff; }
         .hero-photo { 
             width: 100%; max-width: 500px; aspect-ratio: 9 / 16; 
             background: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
         }
 
-        /* --- Modal Style --- */
-        .modal {
-            display: none; position: fixed; z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center; align-items: center;
-        }
-        .modal-content {
-            width: 90%; max-width: 350px; aspect-ratio: 9 / 16;
-            background: var(--white); border-radius: 15px;
-            overflow-y: auto; padding: 25px; position: relative;
-            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 25px; cursor: pointer; color: #333; }
+        /* --- Content Sections --- */
+        .section-padding { padding: 40px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .section-title { font-size: 24px; color: #2c3e50; margin-bottom: 20px; border-bottom: 3px solid var(--primary-yellow); display: inline-block; padding-bottom: 5px; }
         
-        .about-text { font-size: 15px; line-height: 1.6; color: #444; text-align: justify; margin-top: 15px; }
+        .about-box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left; line-height: 1.7; color: #444; }
 
-        .section-padding { padding: 30px 20px; text-align: center; }
-        .service-card { background: white; padding: 20px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 15px auto; border-radius: 8px; text-align: left; }
-        
+        .service-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .service-card { background: white; padding: 20px; width: 280px; border-left: 5px solid var(--primary-yellow); box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; text-align: left; }
+        .service-card h3 { margin-top: 0; color: #2c3e50; }
+
+        /* --- Gallery Section --- */
+        .gallery-section { background: #fff; padding: 40px 20px; text-align: center; }
+        .gallery-btn { background: var(--primary-yellow); color: black; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+
+        /* --- Form & Footer --- */
         .form-section { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; }
-        form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        form { max-width: 400px; margin: 20px auto; display: flex; flex-direction: column; gap: 12px; }
         input, textarea { padding: 12px; border-radius: 4px; border: none; font-size: 16px; width: 100%; box-sizing: border-box; }
         .btn-submit { background: var(--primary-yellow); font-weight: bold; cursor: pointer; padding: 15px; border: none; border-radius: 5px; }
         
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; z-index: 100; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        footer { background: #050a0f; color: #a4b0be; padding: 30px 20px; text-align: center; font-size: 14px; }
+        .address-box { margin-bottom: 15px; color: white; }
+
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 100; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
@@ -116,52 +115,15 @@
             <div class="logo-container">
                 <img src="logo.png" alt="Logo">
             </div>
-            </div>
+        </div>
         <div class="nav-links-container">
-            <a onclick="closeNav()"><i class="fas fa-home"></i> Home</a>
-            <a onclick="openModal('aboutModal')"><i class="fas fa-info-circle"></i> About Us</a>
-            <a onclick="openModal('serviceModal')"><i class="fas fa-cog"></i> Services</a>
-            <a onclick="openModal('galleryModal')"><i class="fas fa-images"></i> Gallery</a>
+            <a href="#" onclick="closeNav()"><i class="fas fa-home"></i> Home</a>
+            <a href="#about" onclick="closeNav()"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="#services" onclick="closeNav()"><i class="fas fa-cog"></i> Services</a>
+            <a href="#gallery" onclick="closeNav()"><i class="fas fa-images"></i> Gallery</a>
             <a href="tel:7088785630" style="margin-top:auto; padding-bottom: 30px;">
                 <i class="fas fa-phone-alt"></i> 70887 85630
             </a>
-        </div>
-    </div>
-
-    <div id="aboutModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('aboutModal')">&times;</span>
-            <h2 style="color: #333; border-bottom: 2px solid var(--primary-yellow); padding-bottom: 10px;">About Us</h2>
-            <div class="about-text">
-                <p><strong>Krishna Solar Installation</strong> offers rooftop solar panel installation and solar services in <strong>Meerut</strong> and <strong>Muzaffarnagar</strong>.</p>
-                <p>Looking for solar panel installation near you? We provide reliable solar solutions for homes and businesses with top-quality products and professional support.</p>
-            </div>
-            <img src="https://images.unsplash.com/photo-1509391366360-feaffa603b1b?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px; margin-top:20px;">
-        </div>
-    </div>
-
-    <div id="serviceModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('serviceModal')">&times;</span>
-            <h2 style="color: #333;">Our Services</h2>
-            <div class="service-card">
-                <h3>Solar Install</h3>
-                <p>On-Grid & Off-Grid expert solutions for your rooftop.</p>
-            </div>
-            <div class="service-card">
-                <h3>Maintenance</h3>
-                <p>Professional cleaning and performance checkups.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('galleryModal')">&times;</span>
-            <h2 style="color: #333;">Gallery</h2>
-            <p>Our Recent Projects</p>
-            <img src="https://images.unsplash.com/photo-1548333198-e5120aede24e?auto=format&fit=crop&w=300&q=80" style="width:100%; border-radius:10px; margin-bottom:15px;">
-            <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" style="background: var(--primary-yellow); color: black; padding: 12px; text-decoration: none; font-weight: bold; border-radius: 5px; display: block;">📸 View Drive Gallery</a>
         </div>
     </div>
 
@@ -172,8 +134,8 @@
         <div class="logo-box"><img src="logo.png" alt="Logo"></div>
         <div class="header-slider">
             <div class="marquee-content">
-                <h1>Welcome to Krishna Solar Installation | Call: 70887 85630 | Solar Experts in Meerut & Muzaffarnagar</h1>
-                <h1>Welcome to Krishna Solar Installation | Call: 70887 85630 | Solar Experts in Meerut & Muzaffarnagar</h1>
+                <h1>Welcome to Krishna Solar Installation | Best Solar Solutions in Meerut & Muzaffarnagar | Call: 70887 85630</h1>
+                <h1>Welcome to Krishna Solar Installation | Best Solar Solutions in Meerut & Muzaffarnagar | Call: 70887 85630</h1>
             </div>
         </div>
     </div>
@@ -182,15 +144,56 @@
         <div class="hero-photo"></div>
     </div>
 
+    <div class="section-padding" id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-box">
+            <p><strong>Krishna Solar Installation</strong> offers rooftop solar panel installation and solar services in <strong>Meerut</strong> and <strong>Muzaffarnagar</strong>.</p>
+            <p>Looking for solar panel installation near you? We provide reliable solar solutions for homes and businesses. Our team is dedicated to providing clean, green, and affordable energy for everyone.</p>
+        </div>
+    </div>
+
+    <div class="section-padding" id="services" style="background: #f1f2f6;">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3><i class="fas fa-solar-panel" style="color:var(--icon-blue)"></i> Solar Install</h3>
+                <p>On-Grid aur Off-Grid expert rooftop solar plant installation team ke dwara.</p>
+            </div>
+            <div class="service-card">
+                <h3><i class="fas fa-tools" style="color:var(--icon-blue)"></i> Maintenance</h3>
+                <p>Professional cleaning aur regular technical checkups aapke solar panels ke liye.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-section" id="gallery">
+        <h2 class="section-title">Our Gallery</h2>
+        <p>Hamare dwara kiye gaye kuch behtareen solar installations dekhein.</p>
+        <img src="https://images.unsplash.com/photo-1548333198-e5120aede24e?auto=format&fit=crop&w=400&q=80" style="width:100%; max-width:400px; border-radius:10px; margin-top:15px;">
+        <br>
+        <a href="https://drive.google.com/drive/folders/1RTksDieGUBQ8LGZXpDRbo35hLEj8uO8v" target="_blank" class="gallery-btn">📸 View All Projects on Drive</a>
+    </div>
+
     <div class="form-section">
-        <h2>Free Consultation</h2>
+        <h2 style="color:var(--primary-yellow)">Free Consultation</h2>
+        <p>Aapki enquiry niche diye gaye form mein bharein:</p>
         <form action="https://formspree.io/f/mwvrvzpa" method="POST">
             <input type="text" name="name" placeholder="Aapka Naam" required>
-            <input type="email" name="email" placeholder="Aapki Email" required>
-            <textarea name="message" rows="4" placeholder="Aapki Enquiry" required></textarea>
+            <input type="tel" name="phone" placeholder="Mobile Number" required>
+            <textarea name="message" rows="4" placeholder="Solar ki jankari (Solar Panel Requirement)" required></textarea>
             <button type="submit" class="btn-submit">SEND MESSAGE</button>
         </form>
     </div>
+
+    <footer>
+        <div class="address-box">
+            <i class="fas fa-map-marker-alt" style="color:var(--primary-yellow)"></i> Meerut, Uttar Pradesh
+        </div>
+        <div class="address-box">
+            <i class="fas fa-phone" style="color:var(--primary-yellow)"></i> 70887 85630
+        </div>
+        <p>&copy; 2026 Krishna Solar Installation. All Rights Reserved.</p>
+    </footer>
 
     <a href="https://wa.me/7088785630" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
@@ -202,18 +205,6 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("menuOverlay").style.display = "none";
-        }
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-            closeNav();
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = "none";
-            }
         }
     </script>
 </body>
