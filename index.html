@@ -12,6 +12,8 @@
             --side-bg: #0a1118; 
             --text-grey: #a4b0be;
             --icon-blue: #3498db;
+            --fb-blue: #1877F2;
+            --insta-pink: #E4405F;
         }
 
         body {
@@ -70,7 +72,16 @@
 
         .nav-links-container { flex-grow: 1; display: flex; flex-direction: column; }
         .nav-links-container a { padding: 12px 25px; text-decoration: none; font-size: 16px; color: var(--text-grey); display: flex; align-items: center; cursor: pointer; }
-        .nav-links-container a i { margin-right: 12px; width: 20px; color: var(--icon-blue); text-align: center; }
+        .nav-links-container a i { margin-right: 12px; width: 20px; text-align: center; }
+        
+        /* Sidebar Icons Color */
+        .nav-links-container a .fa-home, 
+        .nav-links-container a .fa-info-circle, 
+        .nav-links-container a .fa-cog, 
+        .nav-links-container a .fa-images { color: var(--icon-blue); }
+        .nav-links-container a .fa-facebook { color: var(--fb-blue); }
+        .nav-links-container a .fa-instagram { color: var(--insta-pink); }
+        .nav-links-container a .fa-envelope { color: #f39c12; }
 
         .overlay { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.7); z-index: 1000; }
 
@@ -121,8 +132,15 @@
             <a href="#about" onclick="closeNav()"><i class="fas fa-info-circle"></i> About Us</a>
             <a href="#services" onclick="closeNav()"><i class="fas fa-cog"></i> Services</a>
             <a href="#gallery" onclick="closeNav()"><i class="fas fa-images"></i> Gallery</a>
+            
+            <hr style="border: 0.5px solid #1e272e; width: 80%; margin: 10px auto;">
+            
+            <a href="https://www.facebook.com/profile.php?id=61582324694686&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/ksinstallation?igsh=M2YydXdsY3Qxc3Fl" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="mailto:Support@krishnasolarinstallation.in"><i class="fas fa-envelope"></i> Email Us</a>
+
             <a href="tel:7088785630" style="margin-top:auto; padding-bottom: 30px;">
-                <i class="fas fa-phone-alt"></i> 70887 85630
+                <i class="fas fa-phone-alt" style="color:var(--primary-yellow)"></i> 70887 85630
             </a>
         </div>
     </div>
